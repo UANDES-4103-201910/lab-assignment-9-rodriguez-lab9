@@ -1,0 +1,3 @@
+<% @events.each do |ev|%>
+  <li><%= link_to String('Que evento: ' + ev.name + ' Donde: ' + ev.place.name), buy_path(:event_id => ev.id) %></li>
+<% end %>

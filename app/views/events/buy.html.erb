@@ -1,0 +1,10 @@
+Select the amount of tickets you want to purchase for the event:
+<p><%= Event.find_by(id: params[:event_id]).name %></p>
+<p><%= Event.find_by(id: params[:event_id]).place.name %></p>
+<p><%= Event.find_by(id: params[:event_id]).start_date %></p>
+<p>Prices: </p>
+<% (Ticket.all.where(event_id: params[:event_id])).each do |t| %>
+  <%= t.price %>
+  <%= link_to 'BUY', user_tickets_create_path(ticket: t.id)%>
+<% end %>
+Amoutn of tickets to buy: 

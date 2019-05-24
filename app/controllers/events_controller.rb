@@ -5,6 +5,10 @@ class EventsController < ApplicationController
     def create
     end
 
+    def index
+      @events = Event.all
+    end
+
     def new
     end
 
